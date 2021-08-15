@@ -63,6 +63,14 @@ class LatLng {
 
   double get longitudeInRad => degToRadian(_longitude);
 
+  LatLng.fromJson(Map<String, dynamic> json)
+    : _latitude = json['coordinates'][1],
+      _longitude = json['coordinates'][0];
+
+  Map<String, dynamic> toJson() => {
+    'coordinates': [_longitude, _latitude]
+  };
+
   @override
   String toString() =>
       'LatLng(latitude:${NumberFormat("0.0#####").format(latitude)}, '

@@ -59,6 +59,20 @@ void main() {
           'LatLng(latitude:-80.123456, longitude:0.0)');
     }); // end of 'toString' test
 
+    test('> toJson', () {
+      expect((LatLng(-80.0, 0.0)).toJson(),
+          { 'coordinates': [0.0, -80.0] });
+      expect((LatLng(0.0, 80.0)).toJson(),
+          { 'coordinates': [80.0, 0.0] });
+    });
+
+    test('> fromJson', () {
+      expect(LatLng.fromJson({ 'coordinates': [0.0, -80.0] }),
+          LatLng(-80.0, 0.0));
+      expect(LatLng.fromJson({ 'coordinates': [80.0, 0.0] }),
+          LatLng(0.0, 80.0));
+    });
+
     test('> equal', () {
       expect(LatLng(-80.0, 0.0), LatLng(-80.0, 0.0));
       expect(LatLng(-80.0, 0.0), isNot(LatLng(-80.1, 0.0)));
