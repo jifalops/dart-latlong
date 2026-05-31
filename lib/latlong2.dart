@@ -42,14 +42,14 @@ library;
 
 import 'dart:math';
 
-export 'latlong2/calculator/haversine.dart';
-export 'latlong2/calculator/vincenty.dart';
-export 'latlong2/circle.dart';
-export 'latlong2/distance.dart';
-export 'latlong2/interfaces.dart';
-export 'latlong2/lat_lng.dart';
-export 'latlong2/length_unit.dart';
-export 'latlong2/path.dart';
+export 'src/latlong2/calculator/haversine.dart';
+export 'src/latlong2/calculator/vincenty.dart';
+export 'src/latlong2/circle.dart';
+export 'src/latlong2/distance.dart';
+export 'src/latlong2/interfaces.dart';
+export 'src/latlong2/lat_lng.dart';
+export 'src/latlong2/length_unit.dart';
+export 'src/latlong2/path.dart';
 
 /// 2*[pi] as a standalone constant since we are using it rather often
 const double twoPi = 2 * pi;

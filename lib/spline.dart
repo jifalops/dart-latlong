@@ -27,4 +27,4 @@
 ///
 library;
 
-export 'spline/catmull_rom_spline.dart';
+export 'src/spline/catmull_rom_spline.dart';
