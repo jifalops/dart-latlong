@@ -1,6 +1,6 @@
 name: latlong2
 description: Lightweight library for common latitude and longitude calculation
-version: 1.0.0-dev.2
+version: 1.0.0-dev.3
 homepage: https://github.com/ThexXTURBOXx/dart-latlong
 repository: https://github.com/ThexXTURBOXx/dart-latlong
 issue_tracker: https://github.com/ThexXTURBOXx/dart-latlong/issues

@@ -1,3 +1,8 @@
+## [1.0.0-dev.3]
+
+- Renamed `LongitudeDirection#lazy` -> `LongitudeDirection#greenwich`
+- Fix API reference and split code into proper `lib/src` structure
+
 ## [1.0.0-dev.2]
 
 - Renamed `SegmentDirection` -> `LongitudeDirection`
