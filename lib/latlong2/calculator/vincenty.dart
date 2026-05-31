@@ -35,7 +35,7 @@ class Vincenty implements DistanceCalculator {
   double distance(
     final LatLng p1,
     final LatLng p2, {
-    final LongitudeDirection lngDir = LongitudeDirection.lazy,
+    final LongitudeDirection lngDir = LongitudeDirection.greenwich,
   }) {
     const a = equatorRadius,
         b = polarRadius,

@@ -23,7 +23,7 @@ import 'package:latlong2/latlong2.dart';
 
 abstract class DistanceCalculator {
   double distance(final LatLng p1, final LatLng p2,
-      {final LongitudeDirection lngDir = LongitudeDirection.lazy});
+      {final LongitudeDirection lngDir = LongitudeDirection.greenwich});
 
   LatLng offset(
       final LatLng from, final double distanceInMeter, final double bearing);
@@ -46,9 +46,9 @@ abstract class LongitudeDirection {
 
   /// Raw `(p2 − p1) mod (2*pi)` longitude difference. May accidentally take
   /// the long arc if the points straddle the antimeridian.
-  /// May also be called "Greenwich" or similar.
+  /// May also be called "lazy" or similar.
   /// This is the same as the 0.x default behaviour.
-  static const lazy = _LazyDirection();
+  static const greenwich = _GreenwichDirection();
 
   /// Always takes the shortest angular path. May still cross the antimeridian.
   static const shortestPath = _ShortestPathDirection();
@@ -105,8 +105,8 @@ abstract class LongitudeDirection {
 // Private implementations of the built-in directions
 // =============================================================================
 
-class _LazyDirection extends LongitudeDirection {
-  const _LazyDirection();
+class _GreenwichDirection extends LongitudeDirection {
+  const _GreenwichDirection();
 
   @override
   double effectiveLongitudinalDelta(LatLng p1, LatLng p2) =>

@@ -49,8 +49,8 @@ void main() {
         final p = LatLng(0.0, 0.0);
         final q = LatLng(55.0, 78.0);
 
-        expect(
-            compute.distance(p, p, lngDir: LongitudeDirection.lazy), equals(0));
+        expect(compute.distance(p, p, lngDir: LongitudeDirection.greenwich),
+            equals(0));
         expect(compute.distance(p, p, lngDir: LongitudeDirection.shortestPath),
             equals(0));
         expect(compute.distance(p, p, lngDir: LongitudeDirection.longestPath),
@@ -66,8 +66,8 @@ void main() {
             compute.distance(p, p, lngDir: LongitudeDirection.strictlyWestward),
             closeTo(compute.radius * tau, eps));
 
-        expect(
-            compute.distance(q, q, lngDir: LongitudeDirection.lazy), equals(0));
+        expect(compute.distance(q, q, lngDir: LongitudeDirection.greenwich),
+            equals(0));
         expect(compute.distance(q, q, lngDir: LongitudeDirection.shortestPath),
             equals(0));
         expect(compute.distance(q, q, lngDir: LongitudeDirection.longestPath),
@@ -115,7 +115,7 @@ void main() {
         final p1 = LatLng(0.0, -180.0);
         final p2 = LatLng(0.0, 180.0);
 
-        expect(compute.distance(p1, p2, lngDir: LongitudeDirection.lazy),
+        expect(compute.distance(p1, p2, lngDir: LongitudeDirection.greenwich),
             equals(0));
         expect(
             compute.distance(p1, p2, lngDir: LongitudeDirection.shortestPath),
@@ -135,7 +135,7 @@ void main() {
                 lngDir: LongitudeDirection.strictlyWestward),
             closeTo(compute.radius * tau, eps));
 
-        expect(compute.distance(p2, p1, lngDir: LongitudeDirection.lazy),
+        expect(compute.distance(p2, p1, lngDir: LongitudeDirection.greenwich),
             equals(0));
         expect(
             compute.distance(p2, p1, lngDir: LongitudeDirection.shortestPath),
@@ -166,7 +166,7 @@ void main() {
         // direction of whatever shortestPath would do. And in this case, we
         // need to account for the eccentricity of the earth (two different
         // radii, according to the WGS84 definition).
-        expect(compute.distance(p1, p2, lngDir: LongitudeDirection.lazy),
+        expect(compute.distance(p1, p2, lngDir: LongitudeDirection.greenwich),
             closeTo(39660259, eps));
         expect(
             compute.distance(p1, p2, lngDir: LongitudeDirection.shortestPath),
@@ -186,7 +186,7 @@ void main() {
                 lngDir: LongitudeDirection.strictlyWestward),
             closeTo(313799, eps));
 
-        expect(compute.distance(p2, p1, lngDir: LongitudeDirection.lazy),
+        expect(compute.distance(p2, p1, lngDir: LongitudeDirection.greenwich),
             closeTo(39660259, eps));
         expect(
             compute.distance(p2, p1, lngDir: LongitudeDirection.shortestPath),
@@ -212,7 +212,7 @@ void main() {
         final p1 = LatLng(0.0, 0.0);
         final p2 = LatLng(0.0, -45.0);
 
-        expect(distance(p1, p2, lngDir: LongitudeDirection.lazy),
+        expect(distance(p1, p2, lngDir: LongitudeDirection.greenwich),
             closeTo(5009377, eps));
         expect(distance(p1, p2, lngDir: LongitudeDirection.shortestPath),
             closeTo(5009377, eps));
@@ -227,7 +227,7 @@ void main() {
         expect(distance(p1, p2, lngDir: LongitudeDirection.strictlyWestward),
             closeTo(5009377, eps));
 
-        expect(distance(p2, p1, lngDir: LongitudeDirection.lazy),
+        expect(distance(p2, p1, lngDir: LongitudeDirection.greenwich),
             closeTo(5009377, eps));
         expect(distance(p2, p1, lngDir: LongitudeDirection.shortestPath),
             closeTo(5009377, eps));
@@ -259,8 +259,8 @@ void main() {
         final p = LatLng(0.0, 0.0);
         final q = LatLng(55.0, 78.0);
 
-        expect(
-            compute.distance(p, p, lngDir: LongitudeDirection.lazy), equals(0));
+        expect(compute.distance(p, p, lngDir: LongitudeDirection.greenwich),
+            equals(0));
         expect(compute.distance(p, p, lngDir: LongitudeDirection.shortestPath),
             equals(0));
         expect(compute.distance(p, p, lngDir: LongitudeDirection.longestPath),
@@ -276,8 +276,8 @@ void main() {
             compute.distance(p, p, lngDir: LongitudeDirection.strictlyWestward),
             closeToPerc(compute.radius * tau, epsPerc));
 
-        expect(
-            compute.distance(q, q, lngDir: LongitudeDirection.lazy), equals(0));
+        expect(compute.distance(q, q, lngDir: LongitudeDirection.greenwich),
+            equals(0));
         expect(compute.distance(q, q, lngDir: LongitudeDirection.shortestPath),
             equals(0));
         expect(compute.distance(q, q, lngDir: LongitudeDirection.longestPath),
@@ -318,7 +318,7 @@ void main() {
         final p1 = LatLng(0.0, -180.0);
         final p2 = LatLng(0.0, 180.0);
 
-        expect(compute.distance(p1, p2, lngDir: LongitudeDirection.lazy),
+        expect(compute.distance(p1, p2, lngDir: LongitudeDirection.greenwich),
             equals(0));
         expect(
             compute.distance(p1, p2, lngDir: LongitudeDirection.shortestPath),
@@ -349,7 +349,7 @@ void main() {
         // direction of whatever shortestPath would do. And in this case, we
         // need to account for the eccentricity of the earth (two different
         // radii, according to the WGS84 definition).
-        expect(compute.distance(p1, p2, lngDir: LongitudeDirection.lazy),
+        expect(compute.distance(p1, p2, lngDir: LongitudeDirection.greenwich),
             closeToPerc(39660259, epsPerc));
         expect(
             compute.distance(p1, p2, lngDir: LongitudeDirection.shortestPath),
@@ -369,7 +369,7 @@ void main() {
                 lngDir: LongitudeDirection.strictlyWestward),
             closeToPerc(313799, epsPerc));
 
-        expect(compute.distance(p2, p1, lngDir: LongitudeDirection.lazy),
+        expect(compute.distance(p2, p1, lngDir: LongitudeDirection.greenwich),
             closeToPerc(39660259, epsPerc));
         expect(
             compute.distance(p2, p1, lngDir: LongitudeDirection.shortestPath),
@@ -395,7 +395,7 @@ void main() {
         final p1 = LatLng(0.0, 0.0);
         final p2 = LatLng(0.0, -45.0);
 
-        expect(distance(p1, p2, lngDir: LongitudeDirection.lazy),
+        expect(distance(p1, p2, lngDir: LongitudeDirection.greenwich),
             closeToPerc(5009377, epsPerc));
         expect(distance(p1, p2, lngDir: LongitudeDirection.shortestPath),
             closeToPerc(5009377, epsPerc));

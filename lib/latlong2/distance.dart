@@ -70,7 +70,7 @@ class Distance implements DistanceCalculator {
 
   /// Shortcut for [distance]
   double call(final LatLng p1, final LatLng p2,
-      {final LongitudeDirection lngDir = LongitudeDirection.lazy}) {
+      {final LongitudeDirection lngDir = LongitudeDirection.greenwich}) {
     return distance(p1, p2, lngDir: lngDir);
   }
 
@@ -96,7 +96,7 @@ class Distance implements DistanceCalculator {
   /// The function uses the [DistanceCalculator] specified in the CTOR
   @override
   double distance(final LatLng p1, final LatLng p2,
-          {final LongitudeDirection lngDir = LongitudeDirection.lazy}) =>
+          {final LongitudeDirection lngDir = LongitudeDirection.greenwich}) =>
       _round(_calculator.distance(p1, p2, lngDir: lngDir));
 
   /// Returns the great circle bearing (direction) in degrees to the next point ([p2])

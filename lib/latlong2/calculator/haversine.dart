@@ -30,7 +30,7 @@ class Haversine implements DistanceCalculator {
   /// More on [Wikipedia](https://en.wikipedia.org/wiki/Haversine_formula)
   @override
   double distance(final LatLng p1, final LatLng p2,
-      {final LongitudeDirection lngDir = LongitudeDirection.lazy}) {
+      {final LongitudeDirection lngDir = LongitudeDirection.greenwich}) {
     final dLat = p2.latitudeInRad - p1.latitudeInRad;
     final rawDLng = lngDir.effectiveLongitudinalDelta(p1, p2);
 
